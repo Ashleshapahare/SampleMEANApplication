@@ -1,0 +1,27 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}
+  </h1>
+  <a routerLink= '/test' routerLinkActive='active'>
+  click me!
+  </a>
+  <br>
+  <a routerLink='/' routerLinkActive='active'>
+  Back to homepage
+  </a>
+</div>
+<h2>Login Page</h2>
+<h3>Please fill the following details</h3>
+<br>
+    <form>
+      userName- <input type= "text" [(ngModel)]="userName" name="userName"/>
+      <br>
+      <br>
+      Password- <input type= "password" [(ngModel)]="password" name="password"/>
+    </form>
+    <br>
+    <div class="wrapper">
+    <button class="btn login" (click)="onClick()">Login</button>
+    </div>
+
+
