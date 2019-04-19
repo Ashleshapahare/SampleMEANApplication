@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/services/authenticate.service';
 import { Router} from '@angular/router';
+import { SessionStorageService, SessionStorage} from 'angular-web-storage';
 
 
 
@@ -13,21 +14,24 @@ import { Router} from '@angular/router';
 export class LoginComponent {
   private userName: string;
   private password: string;
-  private result: string;
+  private message: string;
+  private isError: boolean=false;
   title = 'Core-app';
-  constructor(private auth:AuthenticationService, private router:Router){}
+  constructor(private auth:AuthenticationService, private router:Router, public session:SessionStorageService){}
   onClick() {
     console.log(this.userName, this.password);
     this.auth.authenticate(this.userName, this.password).subscribe(response=>{
       let result = response.json();
-      console.log(result.authenticated);
+      console.log(result);
       if(result.authenticated)
       {
+        this.session.set("user", this.userName)
       this.router.navigate(["dashboard"]);
       }
       else 
       {
-        this.router.navigate(["/"]);
+        this.isError=true;
+        this.message= "authentication Failed";
       console.log("authentication failed");
       }
     });

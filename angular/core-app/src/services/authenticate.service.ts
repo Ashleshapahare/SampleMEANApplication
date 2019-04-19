@@ -18,7 +18,7 @@ export class AuthenticationService {
        } 
        );
        let header= new Headers;
-       header.append('Content-type','application/jason');
+       header.append('Content-type','application/json');
        return this.http.post(authenticateUrl,body,{headers:header});
          //return name+password;
     }

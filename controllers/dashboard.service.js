@@ -3,7 +3,7 @@ const mongo = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
 const dbName = 'db_core';
 
-exports.getItems = async function()
+exports.getItems = async function(user)
 {
     console.log("starting autheticate in service");
      
@@ -13,7 +13,11 @@ exports.getItems = async function()
 
             const db = client.db(dbName);
 
-            var result = await db.collection("Items").find().toArray();
+            let query={uploaded_by:user};
+            console.log(query);
+
+            var result = await db.collection("Items").find(query).toArray();
+            console.log(result);
             return result;
           }
           catch(error)

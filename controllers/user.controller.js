@@ -12,7 +12,8 @@ exports.authenticate= async function(req,res)
 }
 exports.getItems= async function(req,res)
 {
-    var ItemsAre= await  dashboardService.getItems();
+    var user= req.params.user;
+    var ItemsAre= await  dashboardService.getItems(user);
     console.log(ItemsAre);
     res.send(ItemsAre);
 }

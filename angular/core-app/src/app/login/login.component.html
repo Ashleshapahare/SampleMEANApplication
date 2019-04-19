@@ -11,6 +11,9 @@
   </a>
 </div>
 <h2>Login Page</h2>
+<div *ngIf ="isError" class="alert alert-danger" style="text-align: center">
+  {{message}} 
+</div>
 <h3>Please fill the following details</h3>
 <br>
     <form>

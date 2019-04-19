@@ -6,7 +6,7 @@ var userController= require('./controllers/user.controller.js')
 //router.post("/register", userController.register);
 
 router.post("/authenticate",userController.authenticate);
-router.get("/items",userController.getItems);
+router.get("/items/:user",userController.getItems);
 
 
 router.get("/", function(req, res){console.log("User Module Called")})

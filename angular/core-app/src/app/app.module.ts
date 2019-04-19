@@ -10,6 +10,7 @@ import { HttpModule } from '@angular/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import {AngularWebStorageModule} from 'angular-web-storage';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { RegistrationComponent } from './registration/registration.component';
     RegistrationComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, 
+    BrowserModule, FormsModule, HttpModule, AngularWebStorageModule,
     AppRoutingModule
   ],
   providers: [ AuthenticationService],
