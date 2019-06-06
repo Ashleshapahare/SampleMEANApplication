@@ -20,7 +20,5 @@ user:any;
       let header= new Headers;
       header.append('content-type','application/json');
       return this.http.get(itemsUrl,{headers:header});
-
-      
   }
 }

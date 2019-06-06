@@ -13,7 +13,7 @@ exports.getItems = async function(user)
 
             const db = client.db(dbName);
 
-            let query={uploaded_by:user};
+            let query={uploaded_by: user};
             console.log(query);
 
             var result = await db.collection("Items").find(query).toArray();

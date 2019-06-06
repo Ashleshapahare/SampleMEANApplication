@@ -14,8 +14,8 @@ exports.authenticate = async function(query)
            // console.log(db) ; 
             //let query = {"user_id":"testuser1", "password":"test123"} ;
             var result = await db.collection("userMaster").find(query).toArray();
-            debugger  ;
-            console.log(JSON.stringify(result)) ;
+            //debugger  ;
+            //console.log(JSON.stringify(result)) ;
 
             if (result.length>0)
              {

@@ -1,3 +1,20 @@
-<p>
-  registration works!
-</p>
+
+<h1>Registration Page</h1>
+<br>
+    <form>
+      userName- <input type= "text" [(ngModel)]="userName" name="userName"/>
+      <br>
+      <br>
+      Password- <input type= "password" [(ngModel)]="password" name="password"/>
+      <br>
+      <br>
+      Confirm Password- <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword"/>
+      <br>
+      <br>
+      <input type="radio" [(ngModel)]="userType" name= "userType" value="Vendor" > Vendor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" [(ngModel)]="userType" name ="userType" value="Retailer"> Retailer<br>
+    </form>
+    <br>
+    <div class="wrapper">
+    <button class="btn login" (click)="onClick()">Register</button>
+    </div>

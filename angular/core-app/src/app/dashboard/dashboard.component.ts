@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 import { ItemsService } from 'src/services/items.service';
 import { SessionStorageService} from 'angular-web-storage';
 @Component({
@@ -19,9 +19,9 @@ export class DashboardComponent implements OnInit
      console.log(this.user);
      this.itemService.getItems().subscribe(response => 
       {
-        console.log(response.json());
+        console.log(response);
         this.items= response.json();
-      })
+      });
    }
 }
  
